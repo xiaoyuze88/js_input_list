@@ -143,7 +143,15 @@ js_ul_list.trigger(data);	//then trigger the data list and try to match the valu
 
 <b>ajax (method,url,data,callback)</b>
 <br/>
-<i style="display:block; margin-left:2em;">This function looks kinder similar with that in the jQuery, but there is difference.<br/> If you're using 'get' method(both 'get' or 'GET' is ok), you can use it like ajax('get','index.php?a=b&c=d',callback),or ajax('get','index.php',{a:'b',c:'d'},callback), they are both ok, however the previous one is strongly recommend.<br/>  The callback function receive two parameter, 'data' and 'status', just like the one in jQuery.But the status has only 'success' and 'else' two options.<br/>  If using 'post' method, you can only use it in this way : ajax('post','index.php',{a:'b',c:'d'},callback)</i>
+<i style="display:block; margin-left:2em;">This function looks kinder similar with that in the jQuery, but there is difference.<br/> If you're using 'get' method(both 'get' or 'GET' is ok), you can use it like 
+```javascript
+ajax('get','index.php?a=b&c=d',callback); // recommend
+
+//or
+
+ajax('get','index.php',{a:'b',c:'d'},callback);
+```
+ They are both ok, however the previous one is strongly recommend.<br/>  The callback function receive two parameter, 'data' and 'status', just like the one in jQuery.But the status has only 'success' and 'else' two options.<br/>  If using 'post' method, you can only use it in this way : ajax('post','index.php',{a:'b',c:'d'},callback)</i>
 <br/> 
 Example ('GET' method):
 ```javascript
