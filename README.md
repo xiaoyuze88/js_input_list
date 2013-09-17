@@ -16,7 +16,7 @@ Usage:
 insert these tags into your html file:
 ```javascript
 <link rel="stylesheet" href="js_ul_list.css">
-<script type="text/javascript" src="js_ul_list.min.js"></script>
+<script type="text/javascript" src="js_ul_list.min.js"></script> // Strongly recommend that you put this tag on the bottom of your body tag
 ```
 ```javascript
 
