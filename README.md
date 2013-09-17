@@ -13,14 +13,10 @@ Javascript Dynamic Ul List is a JS plugin that can show the options when typing 
 
 Usage: 
 
-insert these tags into your html file:
-```javascript
-<link rel="stylesheet" href="js_ul_list.css">
-<script type="text/javascript" src="js_ul_list.min.js"></script> // Strongly recommend that you put this tag on the bottom of your body tag
-```
 ```javascript
 
 js_ul_list.init({configObject});
+
 ```
 
 If your data type is static:
