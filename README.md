@@ -61,19 +61,21 @@ You can use the following keys in the configObject to overwrite the default conf
 <i style="display:block; margin-left:2em;">(Optional) If your data type is 'static', you need to init your data list, also you can set it later by using. <a href="#setData">js_ul_list.setData</a> function</i>
 
 ##Data Type 'AJAX'##
-If your data type is 'ajax', there are two ways to set data list dynamiclly by using ajax.
-
+<i style="display:block; margin-left:2em;">If your data type is 'ajax', there are two ways to set data list dynamiclly by using ajax.
+</i>
+<i style="display:block; margin-left:2em;">
 1. You can handler your data in your own way , then trigger the js_ul_list.trigger(string) method.
+</i>
 <b>trigger (data)</b>
 <i style="display:block; margin-left:2em;">By input the data string to the function, it will set it to the data list first and then get the value of your input tag, if there is something match, show it. Please make sure the data you input is the right data format like "a,b,c".</i>
 ```javascript
 var data = "a,b,c"; // get the data list in your own way.
 js_ul_list.trigger(data);	//then trigger the data list and try to match the value in the input tag with data list
 ```
-
+<i style="display:block; margin-left:2em;">
 2. You can use my 'ajax' function to send a ajax request and then trigger it, just remember to put them into the 
 onTyping event's handler.
-
+</i>
 <b>Event:onTyping </b>
 <i style="display:block; margin-left:2em;">This event is triggered by typing in the input tag, you should put the ajax, or trigger function inside the event handler.</i>
 ```javascript
