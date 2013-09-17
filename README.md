@@ -105,7 +105,6 @@ js_ul_list.onTyping = function(){
 I expose some methods that is useful.
 
 You can simply use it like:
-Usage: 
 ```javascript
 js_ul_list.method(arguments);
 ```
