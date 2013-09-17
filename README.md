@@ -21,12 +21,12 @@ js_ul_list.init({configObject});
 
 If your data type is static:
 ```javascript
-{
+js_ul_list.init({
 	data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz', 
 	id : 'inputid',  							
 	dataType : 'static',	
 	ignoreCase : true					 
-}
+});
 ```
 
 If your want to check data dynamtically by using ajax:
