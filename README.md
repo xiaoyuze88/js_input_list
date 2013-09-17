@@ -30,7 +30,7 @@ If your want to check data dynamtically by using ajax:
 
 js_ul_list.init({
 	id : 'inputid',
-	dataType :　'ajax'
+	dataType : 'ajax'
 });
 
 js_ul_list.onTyping = function(){
