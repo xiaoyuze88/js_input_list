@@ -54,18 +54,18 @@ You can use the following keys in the configObject to overwrite the default conf
 <i style="display:block; margin-left:2em;">(Required) The id of the input tag you want to show the list.</i>
 
 <b>dataType (String)</b>
-<i style="display:block; margin-left:2em;">(Optional) It can be 'static',or 'ajax'. Default to be 'static', if your data type is static, you need to init the data list when init the plugin, or you can set it later by using <a href="#setData">js_ul_list.setData</a> function.  </i>
-<i style="display:block; margin-left:2em;">If your data type is 'ajax', you can handle your data in your own way, then use the  <a href="#trigger">js_ul_list.trigger</a> function. Also you can use <a href="#ajax">js_ul_list.ajax</a> function to get your data, then use the 'trigger' method, like the example shown before.</i>
+<i style="display:block; margin-left:2em;">(Optional) It can be 'static',or 'ajax'. Default to be 'static', if your data type is static, you need to init the data list when init the plugin, or you can set it later by using <b>js_ul_list.setData</b> function.  </i>
+<i style="display:block; margin-left:2em;">If your data type is 'ajax', you can handle your data in your own way, then use the  <b>js_ul_list.trigger</b> function. Also you can use <b>js_ul_list.ajax</b> function to get your data, then use the 'trigger' method, like the example shown before.</i>
 
 <b>data (String)</b>
-<i style="display:block; margin-left:2em;">(Optional) If your data type is 'static', you need to init your data list, also you can set it later by using. <a href="#setData">js_ul_list.setData</a> function</i>
+<i style="display:block; margin-left:2em;">(Optional) If your data type is 'static', you need to init your data list, also you can set it later by using. <b>js_ul_list.setData</b> function</i>
 
 ##Data Type 'AJAX'##
 <i style="display:block; margin-left:2em;">If your data type is 'ajax', there are two ways to set data list dynamiclly by using ajax.
 </i>
 <br/>
 <i style="display:block; margin-left:2em;">
-1. You can handle your data in your own way , then trigger the <a href="#trigger">js_ul_list.trigger(string) </a>method.
+1. You can handle your data in your own way , then trigger the <b>js_ul_list.trigger(string) </b>method.
 </i>
 <br/>
 <b>trigger (data)</b>
