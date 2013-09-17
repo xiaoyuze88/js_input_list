@@ -12,7 +12,14 @@ Javascript Dynamic Ul List is a JS plugin that can show the options when typing 
 ##Configuration##
 
 Usage: 
+
+insert these tags into your html file:
 ```javascript
+<link rel="stylesheet" href="js_ul_list.css">
+<script type="text/javascript" src="js_ul_list.min.js"></script>
+```
+```javascript
+
 js_ul_list.init({configObject});
 ```
 
