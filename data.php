@@ -2,9 +2,9 @@
 // this page is just for test
 header("CONTENT-TYPE:text/html; CHARSET=UTF-8");
 $data = array("ajax","absolue","pure","hello","amblulance",'a');
-if(isset($_POST['value']))
+if(isset($_GET['value']))
 {
-	$value = $_POST['value'];
+	$value = $_GET['value'];
 	$output = array();
 	foreach ($data as $k => $v) {
 		if(strpos($v,$value)!== false)

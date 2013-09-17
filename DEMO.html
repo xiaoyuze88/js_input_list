@@ -8,13 +8,7 @@
 	
 </head>
 <body>
-<form class="form" onsubmit="a(event)">
-	<div class="ainput">
-		<input name="tag_name" cols=40 id="inputid" style="padding:0px" class="input"></input>
-	</div>
-	<br/>
-	<button name="submit" value="submit">submit</button>
-</form>
+	<input name="tag_name" cols=40 id="inputid" style="padding:0px" class="input"></input>
 
 <!-- insert these script tags under the  bottom of your body tag -->
 <link rel="stylesheet" href="js_ul_list.css">
@@ -29,7 +23,7 @@ js_ul_list.init({
 
 js_ul_list.onTyping = function(){
 	var value = js_ul_list.getValue();
-	js_ul_list.ajax("post",'data.php',{value:value},function(data,status) {
+	js_ul_list.ajax("get",'data.php?value=' + value,function(data,status) {
 		if(status=='success')
 		{
 			js_ul_list.trigger(data);	
