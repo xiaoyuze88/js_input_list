@@ -65,7 +65,7 @@ You can use the following keys in the configObject to overwrite the default conf
 </i>
 <br/>
 <i style="display:block; margin-left:2em;">
-1. You can handler your data in your own way , then trigger the <a href="#trigger">js_ul_list.trigger(string) </a>method.
+1. You can handle your data in your own way , then trigger the <a href="#trigger">js_ul_list.trigger(string) </a>method.
 </i>
 <br/>
 <b>trigger (data)</b>
@@ -99,7 +99,7 @@ js_ul_list.onTyping = function(){
 };
 ```
 
-<b>ajax (method,url,data,callback)</b>
+<b id="ajax">ajax (method,url,data,callback)</b>
 <br/>
 <i style="display:block; margin-left:2em;">This function is kinder similar with that in the jQuery, but there is difference.If you're using 'get' method(both 'get' or 'GET' is ok), you can use it like ajax('get','index.php?a=b&c=d',callback),or ajax('get','index.php',{a:'b',c:'d'},callback), they are both ok, however the previous one is strongly recommend. The callback function receive two parameter, 'data' and 'status', just like the one in jQuery.But the status has only 'success' and 'else' two options. If using 'post' method, you can only use it in this way : ajax('post','index.php',{a:'b',c:'d'},callback)</i>
 Example ('GET' method):
@@ -154,7 +154,7 @@ Usage:
 js_ul_list.method(arguments);
 ```
 
-<b>setData (String)</b>
+<b id="setData">setData (String)</b>
 <i style="display:block; margin-left:2em;">Set your data list,the data format should be like "abc,paul,paris,marks".</i>
 
 <b>getValue ()</b>
@@ -168,3 +168,31 @@ js_ul_list.method(arguments);
 
 <b>show ()</b>
 <i style="display:block; margin-left:2em;">By using this function , it will check the value of the input tag and try to find it in your data list first. If found match data , the ul list will show. Please make sure you've inited your data list already.</i>
+
+<b id="trigger">trigger (String)</b>
+<i style="display:block; margin-left:2em;">By input the data string to the function, it will set it to the data list first and then get the value of your input tag, if there is something match, show it. Please make sure the data you input is the right data format like "a,b,c".</i>
+
+```javascript
+var data = "a,b,c"; // get the data list in your own way.
+js_ul_list.trigger(data);	//then trigger the data list and try to match the value in the input tag with data list
+```
+
+##Event##
+
+<b id="onTyping">onTyping </b>
+<i style="display:block; margin-left:2em;">This event is triggered by typing in the input tag, you should put the ajax, or trigger function inside the event handler.</i>
+```javascript
+js_ul_list.onTyping = function(){
+	var value = js_ul_list.getValue();
+	js_ul_list.ajax("get",'data.php',{value:value},function(data,status) {
+		if(status=='success')
+		{
+			js_ul_list.trigger(data);	
+		}
+		else
+		{
+			alert(data);
+		}
+	});
+};
+```
