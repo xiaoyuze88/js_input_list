@@ -134,7 +134,6 @@
 						reg = new RegExp(value,'i');
 
 					}
-console.log(reg);
 					if(self.data.match(reg))
 					{
 						var show_arr = [];
