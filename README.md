@@ -67,7 +67,7 @@ You can use the following keys in the configObject to overwrite the default conf
 <i style="display:block; margin-left:2em;">(Optional) If your data type is 'static', you need to init your data list, also you can set it later by using. <b>js_ul_list.setData</b> function</i>
 
 <b>ignoreCase (Boolean)</b>
-<i style="display:block; margin-left:2em;">(Optional) Default to be false, if it set to true, it will ignore upper or lower case when match the value with the data list. <br/><b>NOTICE: If you want to igone case while you're using 'ajax' data type, make sure your server side ignore the case too.</b></i>
+<i style="display:block; margin-left:2em;">(Optional) Default to be false, if it set to true, it will ignore upper or lower case when match the value with the data list. <b style="font-size:14px;opacity:0.8">(NOTICE: If you want to igone case while you're using 'ajax' data type, make sure your server side ignore the case too.)</b></i>
 
 ##Data Type 'AJAX'##
 <i style="display:block; margin-left:2em;">If your data type is 'ajax', there are two ways to set data list dynamiclly by using ajax.
