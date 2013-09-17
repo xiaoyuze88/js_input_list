@@ -2,7 +2,8 @@
 
 Javascript Dynamic Ul List is a JS plugin that can show the options when typing on an input tag.
 
-* Is written by pure Javascript , and please feel free using it without any library,The js_ul_list.min.js is only 4kb.
+* Is written by pure Javascript , and please feel free using it without any library.
+* The js_ul_list.min.js is only 4kb.
 * Supports IE6+, Firefox, Chrome, Safari and other standard HTML5 browsers.
 * Written by Xiao Yuze ( xiaoyz.me )
 * I accept further customization job if you require more functions. Please contact me via xiaoyuze88@gmail.com
