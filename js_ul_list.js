@@ -34,7 +34,8 @@
 // if using 'ajax', you should using the 'onTyping' event and you can using our ajax function or 
 // get data in your own way , and trigger the list by trigger function, which will shown below.
 			dataType : 'static',
-
+			//if it's true , it will match data ignoring upper or lower case
+			ignoreCase : false,
 
 // you should run this function before you using this plugin,the function accept an object,
 // 			obj {
@@ -52,7 +53,7 @@
 
 				var dom = doc.getElementById(this.id) || '';
 				this.inited = this.checkInit();
-
+				this.ignoreCase = obj.ignoreCase || false;
 				if (dom)
 				{
 					addEventListener(dom,'keydown',onKeyDown);
@@ -121,13 +122,24 @@
 				var value = self.getValue();
 				self.hide();
 				if(value){
-					if(self.data.indexOf(value) > -1)
+					var reg;
+
+					if(!this.ignoreCase)
+					{
+						reg = new RegExp(value);
+					}
+					else if(this.ignoreCase)
+					{
+						reg = new RegExp(value,'i');
+					}
+
+					if(self.data.match(reg))
 					{
 						var show_arr = [];
 						var innerHTML = '';
 						for(var l = self.data_arr.length; l; l--)
 						{
-							if(self.data_arr[l-1].indexOf(value) > -1)
+							if(self.data_arr[l-1].match(reg))
 							{
 								
 								show_arr.push(self.data_arr[l-1]);

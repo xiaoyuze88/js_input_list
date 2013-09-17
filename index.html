@@ -22,9 +22,10 @@
 // insert this js label into the last of your body label
 // the parameter is your textarea's id
 js_ul_list.init({
-	// data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz',
+	data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz',
 	id : 'inputid',
-	dataType :　'ajax'
+	dataType :　'static',
+	ignoreCase : true
 });
 
 js_ul_list.onTyping = function(){

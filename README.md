@@ -21,7 +21,8 @@ If your data type is static:
 {
 	data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz', 
 	id : 'inputid',  							
-	dataType : 'static',						 
+	dataType : 'static',	
+	ignoreCase : true					 
 }
 ```
 
@@ -30,7 +31,8 @@ If your want to check data dynamtically by using ajax:
 
 js_ul_list.init({
 	id : 'inputid',
-	dataType : 'ajax'
+	dataType : 'ajax',
+	ignoreCase : true
 });
 
 js_ul_list.onTyping = function(){
@@ -60,6 +62,9 @@ You can use the following keys in the configObject to overwrite the default conf
 <b>data (String)</b>
 <i style="display:block; margin-left:2em;">(Optional) If your data type is 'static', you need to init your data list, also you can set it later by using. <b>js_ul_list.setData</b> function</i>
 
+<b>ignoreCase (Boolean)</b>
+<i style="display:block; margin-left:2em;">(Optional) Default to be false, if it set to true, it will ignore upper or lower case when match the value with the data list.</i>
+
 ##Data Type 'AJAX'##
 <i style="display:block; margin-left:2em;">If your data type is 'ajax', there are two ways to set data list dynamiclly by using ajax.
 </i>
@@ -74,8 +79,7 @@ js_ul_list.trigger(data);	//then trigger the data list and try to match the valu
 ```
 
 <i style="display:block; margin-left:2em;">
-2. You can use my 'ajax' function to send a ajax request and then trigger it, just remember to put them into the 
-onTyping event's handler.
+2. You can use the 'ajax' function to send a ajax request and then trigger it, just remember to put them into the onTyping event's handler.
 </i>
 <br/>
 ```javascript
@@ -108,6 +112,11 @@ js_ul_list.method(arguments);
 
 <b>setData (String)</b>
 <i style="display:block; margin-left:2em;">Set your data list,the data format should be like "abc,paul,paris,marks".</i>
+
+```javascript
+var data = "a,b,c,paul,ajax";
+js_ul_list.setData(data);
+```
 
 <b>getValue ()</b>
 <i style="display:block; margin-left:2em;">This function can return the value of the input tag that you inited.</i>
