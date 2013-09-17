@@ -130,9 +130,11 @@
 					}
 					else if(this.ignoreCase)
 					{
-						reg = new RegExp(value,'i');
-					}
 
+						reg = new RegExp(value,'i');
+
+					}
+console.log(reg);
 					if(self.data.match(reg))
 					{
 						var show_arr = [];

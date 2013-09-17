@@ -16,15 +16,13 @@
 	<button name="submit" value="submit">submit</button>
 </form>
 
-<script type="text/javascript" src="js_ul_list.js"></script>
+<!-- insert these script tags under the  bottom of your body tag -->
+<script type="text/javascript" src="js_ul_list.min.js"></script>
 <script type="text/javascript">
-
-// insert this js label into the last of your body label
-// the parameter is your textarea's id
 js_ul_list.init({
-	data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz',
+	// data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz',
 	id : 'inputid',
-	dataType :　'static',
+	dataType :　'ajax',
 	ignoreCase : true
 });
 
@@ -41,8 +39,6 @@ js_ul_list.onTyping = function(){
 		}
 		
 	});
-	// console.log(value)
-
 };
 </script>
 </body>
