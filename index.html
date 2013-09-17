@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<!-- insert these into your head label -->
+	<link rel="stylesheet" href="js_ul_list.css">
+	
+</head>
+<body>
+<form class="form" onsubmit="a(event)">
+	<div class="ainput">
+		<input name="tag_name" cols=40 id="inputid" style="padding:0px" class="input"></input>
+	</div>
+	<br/>
+	<button name="submit" value="submit">submit</button>
+</form>
+
+<script type="text/javascript" src="js_ul_list.js"></script>
+<script type="text/javascript">
+
+// insert this js label into the last of your body label
+// the parameter is your textarea's id
+js_ul_list.init({
+	// data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz',
+	id : 'inputid',
+	dataType :　'ajax'
+});
+
+js_ul_list.onTyping = function(){
+	var value = js_ul_list.getValue();
+	js_ul_list.ajax("post",'data.php',{value:value},function(data,status) {
+		if(status=='success')
+		{
+			js_ul_list.trigger(data);	
+		}
+		else
+		{
+			alert(data);
+		}
+		
+	});
+	// console.log(value)
+
+};
+</script>
+</body>
+</html>
