@@ -7,7 +7,7 @@ Javascript Dynamic Ul List is a JS plugin that can show the options when typing 
 * Written by Xiao Yuze ( xiaoyz.me )
 * I accept further customization job if you require more functions. Please contact me via xiaoyuze88@gmail.com
 
-![screenshot](https://raw.github.com/xyz/js_ul_list/preview.png)
+![screenshot](https://raw.github.com/xyz/js_ul_list/master/blob/preview.png)
 
 ##Configuration##
 
