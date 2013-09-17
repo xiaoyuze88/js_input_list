@@ -21,7 +21,7 @@ The default init object is:
 {
 	data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz', 
 	id : 'inputid',  							
-	dataType :　'static',						 
+	dataType : 'static',						 
 }
 ```
 //(optional) You should setup your dataIf you're using 'static' data type.
