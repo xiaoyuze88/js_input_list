@@ -95,7 +95,7 @@
 				if(data_string && typeof data_string == 'string')
 				{
 					this.setData(data_string);
-					this.refreshTagList()
+					this.show()
 				}
 			},
 			// get the value of the input
@@ -112,14 +112,14 @@
 				else return false;
 			},
 			// refresh the li list
-			refreshTagList : function() {
+			show : function() {
 				if(!this.inited) return false;
 				var self = this;
 				this.selectLi = -1;
 				//当输入字母，重置刷新显示列表
 					// 获取已有tag列表
 				var value = self.getValue();
-				self.clearTagList();
+				self.hide();
 				if(value){
 					if(self.data.indexOf(value) > -1)
 					{
@@ -154,7 +154,7 @@
 				dom.className = 'active';
 			},
 			// clear the li list
-			clearTagList : function() {
+			hide : function() {
 				//清除标签显示栏
 				var dom = doc.getElementById("ul_________append");
 				if(dom)
@@ -261,16 +261,16 @@
 			},
 			// on blur , clear the li list
 			onBlur : function(e) {
-				tag.clearTagList();
+				tag.hide();
 			},
 			// on focus , show li list
 			onFocus : function (e) {
-				tag.refreshTagList();
+				tag.show();
 			},
 			// on ese, clear li list
 			onEsc : function(event) {
 				//按esc，清除tag列表
-				this.clearTagList();
+				this.hide();
 				return;	
 			},
 			// on enter , clear li list
@@ -278,7 +278,7 @@
 				if(this.showul)
 				{
 					preventDefault(event);
-					this.clearTagList();
+					this.hide();
 				}
 			},
 			onUpArrow : function(event) {
@@ -461,7 +461,7 @@
 			}
 			else
 			{
-				tag.refreshTagList();
+				tag.show();
 			}
 		}
 	}
