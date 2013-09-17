@@ -55,7 +55,7 @@ You can use the following keys in the configObject to overwrite the default conf
 
 <b>dataType (String)</b>
 <i style="display:block; margin-left:2em;">(Optional) It can be 'static',or 'ajax'. Default to be 'static', if your data type is static, you need to init the data list when init the plugin, or you can set it later by using <a href="#setData">js_ul_list.setData</a> function.  </i>
-<i style="display:block; margin-left:2em;">If your data type is 'ajax', you can handle your data in your own way, then use the  <a href="#trigger">js_ul_list.trigger</a> function. Also you can use <a href="#setData">js_ul_list.ajax</a> function to get your data, then use the 'trigger' method, like the example shown before.</i>
+<i style="display:block; margin-left:2em;">If your data type is 'ajax', you can handle your data in your own way, then use the  <a href="#trigger">js_ul_list.trigger</a> function. Also you can use <a href="#ajax">js_ul_list.ajax</a> function to get your data, then use the 'trigger' method, like the example shown before.</i>
 
 <b>data (String)</b>
 <i style="display:block; margin-left:2em;">(Optional) If your data type is 'static', you need to init your data list, also you can set it later by using. <a href="#setData">js_ul_list.setData</a> function</i>
@@ -63,8 +63,9 @@ You can use the following keys in the configObject to overwrite the default conf
 ##Data Type 'AJAX'##
 <i style="display:block; margin-left:2em;">If your data type is 'ajax', there are two ways to set data list dynamiclly by using ajax.
 </i>
+<br/>
 <i style="display:block; margin-left:2em;">
-1. You can handler your data in your own way , then trigger the js_ul_list.trigger(string) method.
+1. You can handler your data in your own way , then trigger the <a href="#trigger">js_ul_list.trigger(string) </a>method.
 </i>
 <br/>
 <b>trigger (data)</b>
