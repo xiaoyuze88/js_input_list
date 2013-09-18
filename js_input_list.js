@@ -160,10 +160,24 @@
 				dom.className = '';
 				// dom.selected=0;	
 			},
+			clearActive : function() {
+				var uldom;
+				if(uldom = document.getElementById("ul_________append"))
+				{
+					var uldom_nodelist = uldom.childNodes;
+					for(var l=uldom_nodelist.length; l; l--) 
+					{
+						if(uldom_nodelist[l-1].className == 'active')
+						{
+							this.tagUnselected(uldom_nodelist[l-1]);
+						}
+					}
+				}
+			},
 			// input the specific dom you want to select
 			tagselected:function (dom) {	
 				//传入dom,把该li选中，并把其值传到input处
-				this.setValue(dom.innerHTML);
+				// this.setValue(dom.innerHTML);
 				dom.className = 'active';
 			},
 			// clear the li list
@@ -291,6 +305,7 @@
 				if(this.showul)
 				{
 					preventDefault(event);
+					this.setValue(this.getActiveValue());
 					this.hide();
 				}
 			},
@@ -299,33 +314,24 @@
 				var liArr;
 				if(this.selectLi > -1)
 				{
-					var uldom = doc.getElementById("ul_________append");
 					this.selectLi -= 1;
 
 					if(this.selectLi == -1)
 					{
-						liArr = uldom.childNodes;
-						for(var l = liArr.length;l;l--)
-						{
-							if(liArr[l-1].className == 'active')
-							{
-								this.tagUnselected(liArr[l-1]);
-							}
-						}
-						
+						this.clearActive();
 					}
 					else
 					{
-
-						liArr = uldom.childNodes;
-						for(l=liArr.length;l;l--)
+						var active_dom = doc.getElementById("li_________append_" + (+this.selectLi + 1));
+						if(active_dom)
 						{
-							var id = liArr[l-1].id.replace("li_________append_",'');
-							if(id == this.selectLi)
-							{
-								this.tagselected(liArr[l-1]);
-								this.tagUnselected(liArr[l]);
-							}
+							this.tagUnselected(active_dom);
+						}
+
+						var next_active_dom = doc.getElementById("li_________append_" + (this.selectLi));
+						if(next_active_dom)
+						{
+							this.tagselected(next_active_dom);
 						}
 					}
 				}
@@ -334,20 +340,21 @@
 				preventDefault(event);
 				if(this.selectLi >= this.liLength-1) return false;
 				this.selectLi += 1;
-				var uldom = doc.getElementById("ul_________append");
-				var liArr = uldom.childNodes;
-				for(l=liArr.length;l;l--)
+				var active_dom = doc.getElementById("li_________append_" + (+this.selectLi - 1));
+				if(active_dom)
 				{
-					var id = liArr[l-1].id.replace("li_________append_",'');
-					if(id == this.selectLi)
-					{
-						this.tagselected(liArr[l-1]);
-						if(l-1 > 0)
-						{
-							this.tagUnselected(liArr[l-2])
-						}
-					}
+					this.tagUnselected(active_dom);
 				}
+
+				var next_active_dom = doc.getElementById("li_________append_" + (this.selectLi));
+				if(next_active_dom)
+				{
+					this.tagselected(next_active_dom);
+				}
+			},
+			getActiveValue : function() {
+				var uldom = doc.getElementById("li_________append_" + this.selectLi);
+				return uldom.innerHTML;
 			}
 		}
 	
@@ -450,6 +457,7 @@
 		return left;
 	}
 
+
 	function addEventListener(obj,event,handler) {
 		if(window.addEventListener)
 		{
@@ -498,6 +506,6 @@
 	
 	//we attach the var 'js_ul_list' to the global object -- window,
 	// so you can use js_ul_list.xxx to access our function inside the tag object;
-	window.js_ul_list = tag;
+	window.js_input_list = tag;
 
 })(window);

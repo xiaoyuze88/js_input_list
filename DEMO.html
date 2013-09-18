@@ -4,29 +4,28 @@
 	<title></title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<!-- insert these into your head label -->
-	<link rel="stylesheet" href="js_ul_list.css">
+	<link rel="stylesheet" href="js_input_list.css">
 	
 </head>
 <body>
 	<input name="tag_name" cols=40 id="inputid" style="padding:0px" class="input"></input>
 
 <!-- insert these script tags under the  bottom of your body tag -->
-<link rel="stylesheet" href="js_ul_list.css">
-<script type="text/javascript" src="js_ul_list.min.js"></script>
+<script type="text/javascript" src="js_input_list.js"></script>
 <script type="text/javascript">
-js_ul_list.init({
+js_input_list.init({
 	// data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz',
 	id : 'inputid',
 	dataType :　'ajax',
 	ignoreCase : true
 });
 
-js_ul_list.onTyping = function(){
-	var value = js_ul_list.getValue();
-	js_ul_list.ajax("get",'data.php?value=' + value,function(data,status) {
+js_input_list.onTyping = function(){
+	var value = js_input_list.getValue();
+	js_input_list.ajax("get",'data.php?value=' + value,function(data,status) {
 		if(status=='success')
 		{
-			js_ul_list.trigger(data);	
+			js_input_list.trigger(data);	
 		}
 		else
 		{
