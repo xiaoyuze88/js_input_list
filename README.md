@@ -3,12 +3,12 @@
 Javascript Input Data List is a JS plugin that can show the data list when typing on an input tag.
 
 * Is written by pure Javascript , and please feel free using it without any library.
-* The js_ul_list.min.js is only 4kb.
+* The js_input_list.min.js is only 4kb.
 * Supports IE6+, Firefox, Chrome, Safari and other standard browsers.
 * Written by Xiao Yuze ( xiaoyz.me )
 * I accept further customization job if you require more functions. Please contact me via xiaoyuze88@gmail.com
 
-![screenshot](https://raw.github.com/xiaoyuze88/js_ul_list/master/preview.png)
+![screenshot](https://raw.github.com/xiaoyuze88/js_input_list/master/preview.png)
 
 ##Configuration##
 
@@ -16,13 +16,13 @@ Usage:
 
 ```javascript
 
-js_ul_list.init({configObject});
+js_input_list.init({configObject});
 
 ```
 
 If your data type is static:
 ```javascript
-js_ul_list.init({
+js_input_list.init({
 	data:'abc,ae,a,efg,hijk,lmno,pqrs,tuvw,xyz', 
 	id : 'inputid',  							
 	dataType : 'static',	
@@ -33,18 +33,18 @@ js_ul_list.init({
 If your want to check data dynamtically by using ajax:
 ```javascript
 
-js_ul_list.init({
+js_input_list.init({
 	id : 'inputid',
 	dataType : 'ajax',
 	ignoreCase : true
 });
 
-js_ul_list.onTyping = function(){
-	var value = js_ul_list.getValue();
-	js_ul_list.ajax("post",'data.php',{value:value},function(data,status) {
+js_input_list.onTyping = function(){
+	var value = js_input_list.getValue();
+	js_input_list.ajax("post",'data.php',{value:value},function(data,status) {
 		if(status=='success')
 		{
-			js_ul_list.trigger(data);	
+			js_input_list.trigger(data);	
 		}
 		else
 		{
@@ -60,11 +60,11 @@ You can use the following keys in the configObject to overwrite the default conf
 <i style="display:block; margin-left:2em;">(Required) The id of the input tag you want to show the list.</i>
 
 <b>dataType (String)</b>
-<i style="display:block; margin-left:2em;">(Optional) It can be 'static',or 'ajax'. Default to be 'static', if your data type is static, you need to init the data list when init the plugin, or you can set it later by using <b>js_ul_list.setData</b> function.  </i>
-<i style="display:block; margin-left:2em;">If your data type is 'ajax', you can handle your data in your own way, then use the  <b>js_ul_list.trigger</b> function. Also you can use <b>js_ul_list.ajax</b> function to get your data, then use the 'trigger' method, like the example shown before.</i>
+<i style="display:block; margin-left:2em;">(Optional) It can be 'static',or 'ajax'. Default to be 'static', if your data type is static, you need to init the data list when init the plugin, or you can set it later by using <b>js_input_list.setData</b> function.  </i>
+<i style="display:block; margin-left:2em;">If your data type is 'ajax', you can handle your data in your own way, then use the  <b>js_input_list.trigger</b> function. Also you can use <b>js_input_list.ajax</b> function to get your data, then use the 'trigger' method, like the example shown before.</i>
 
 <b>data (String)</b>
-<i style="display:block; margin-left:2em;">(Optional) If your data type is 'static', you need to init your data list, also you can set it later by using. <b>js_ul_list.setData</b> function</i>
+<i style="display:block; margin-left:2em;">(Optional) If your data type is 'static', you need to init your data list, also you can set it later by using. <b>js_input_list.setData</b> function</i>
 
 <b>ignoreCase (Boolean)</b>
 <i style="display:block; margin-left:2em;">(Optional) Default to be false, if it set to true, it will ignore upper or lower case when match the value with the data list. <b style="font-size:14px;opacity:0.8">(NOTICE: If you want to igone case while you're using 'ajax' data type, make sure your server side ignore the case too.)</b></i>
@@ -74,12 +74,12 @@ You can use the following keys in the configObject to overwrite the default conf
 </i>
 <br/>
 <i style="display:block; margin-left:2em;">
-1. You can handle your data in your own way , then trigger the <b>js_ul_list.trigger(string) </b>method.
+1. You can handle your data in your own way , then trigger the <b>js_input_list.trigger(string) </b>method.
 </i>
 <br/>
 ```javascript
 var data = "a,b,c"; // get the data list in your own way.
-js_ul_list.trigger(data);	//then trigger the data list and try to match the value in the input tag with data list
+js_input_list.trigger(data);	//then trigger the data list and try to match the value in the input tag with data list
 ```
 
 <i style="display:block; margin-left:2em;">
@@ -87,12 +87,12 @@ js_ul_list.trigger(data);	//then trigger the data list and try to match the valu
 </i>
 <br/>
 ```javascript
-js_ul_list.onTyping = function(){
-	var value = js_ul_list.getValue();
-	js_ul_list.ajax("get",'data.php',{value:value},function(data,status) {
+js_input_list.onTyping = function(){
+	var value = js_input_list.getValue();
+	js_input_list.ajax("get",'data.php',{value:value},function(data,status) {
 		if(status=='success')
 		{
-			js_ul_list.trigger(data);	
+			js_input_list.trigger(data);	
 		}
 		else
 		{
@@ -110,7 +110,7 @@ I expose some methods that is useful.
 
 You can simply use it like:
 ```javascript
-js_ul_list.method(arguments);
+js_input_list.method(arguments);
 ```
 
 <b>setData (String)</b>
@@ -118,7 +118,7 @@ js_ul_list.method(arguments);
 
 ```javascript
 var data = "a,b,c,paul,ajax";
-js_ul_list.setData(data);
+js_input_list.setData(data);
 ```
 
 <b>getValue ()</b>
@@ -138,7 +138,7 @@ js_ul_list.setData(data);
 
 ```javascript
 var data = "a,b,c"; // get the data list in your own way.
-js_ul_list.trigger(data);	//then trigger the data list and try to match the value in the input tag with data list
+js_input_list.trigger(data);	//then trigger the data list and try to match the value in the input tag with data list
 ```
 
 <b>ajax (method,url,data,callback)</b>
@@ -155,10 +155,10 @@ ajax('get','index.php',{a:'b',c:'d'},callback);
 <br/> 
 Example ('GET' method):
 ```javascript
-js_ul_list.ajax("get",'data.php',{value:value},function(data,status) { // recommend
+js_input_list.ajax("get",'data.php',{value:value},function(data,status) { // recommend
 	if(status=='success')
 	{
-		js_ul_list.trigger(data);	
+		js_input_list.trigger(data);	
 	}
 	else
 	{
@@ -168,10 +168,10 @@ js_ul_list.ajax("get",'data.php',{value:value},function(data,status) { // recomm
 
 //or
 
-js_ul_list.ajax("get",'data.php?a=b&c=d',function(data,status) {
+js_input_list.ajax("get",'data.php?a=b&c=d',function(data,status) {
 	if(status=='success')
 	{
-		js_ul_list.trigger(data);	
+		js_input_list.trigger(data);	
 	}
 	else
 	{
@@ -183,10 +183,10 @@ js_ul_list.ajax("get",'data.php?a=b&c=d',function(data,status) {
 
 Example ('POST' method):
 ```javascript
-js_ul_list.ajax("post",'data.php',{value:value},function(data,status) {
+js_input_list.ajax("post",'data.php',{value:value},function(data,status) {
 	if(status=='success')
 	{
-		js_ul_list.trigger(data);	
+		js_input_list.trigger(data);	
 	}
 	else
 	{
@@ -200,12 +200,12 @@ js_ul_list.ajax("post",'data.php',{value:value},function(data,status) {
 <b id="onTyping">onTyping </b>
 <i style="display:block; margin-left:2em;">This event is triggered by typing in the input tag, you should put the ajax, or trigger function inside the event handler.</i>
 ```javascript
-js_ul_list.onTyping = function(){
-	var value = js_ul_list.getValue();
-	js_ul_list.ajax("get",'data.php',{value:value},function(data,status) {
+js_input_list.onTyping = function(){
+	var value = js_input_list.getValue();
+	js_input_list.ajax("get",'data.php',{value:value},function(data,status) {
 		if(status=='success')
 		{
-			js_ul_list.trigger(data);	
+			js_input_list.trigger(data);	
 		}
 		else
 		{
